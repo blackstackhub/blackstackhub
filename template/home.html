@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Black Stack Hub</title>
+      <link rel="stylesheet" href="{% static 'css/coming-soon.css' %}">
+      <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+      <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+      <meta property="og:title" content="Black Stack Hub">
+      <meta property="og:description" content="Join Black Stack Hub, where diversity meets innovation in the tech industry. Explore cybersecurity, web, and app development in an inclusive community. Connect, collaborate, and shape the future with us.">
+      <meta property="og:image" content="{% static 'images/blackstackhub.jpg' %}">
+      <meta property="og:url" content="https://blackstackhub.com">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="google-adsense-account" content="ca-pub-3805485538389573">
+   </head>
+   <body>
+      <div class="logo">
+         <img src="{% static 'images/blackstackhub.jpg' %}" alt="Logo Alt Text">
+      </div>
+      <div class="container">
+         <div class="countdown" id="count"></div>
+         <div class="bottom-text">
+            <p>Stay tuned for something amazing!</p>
+            <p><a class="neon-link" href="https://chat.whatsapp.com/IVvrrF9Wq7OHWk5x4XNk9K">Join us here</a></p>
+         </div>
+      </div>
+      <script src="{% static 'js/count-down.js' %}"></script>
+   </body>
+</html>
