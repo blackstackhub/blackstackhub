@@ -1,6 +1,6 @@
 // count-down.js
 
-const countDownDate = new Date("2024-02-13T15:37:25Z").getTime();
+const countDownDate = new Date("2024-04-13T15:37:25Z").getTime();
 
 const countdownFunction = setInterval(function() {
   const now = new Date().getTime();
