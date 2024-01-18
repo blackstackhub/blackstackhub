@@ -4,6 +4,6 @@ from . import views
 from django.views.generic import TemplateView
 urlpatterns = [
     path('', views.home, name='Home'),
-    path('ads.txt', TemplateView.as_view(template_name='ads.txt', content_type='text/plain')),
+    path('app-ads.txt', views.ads, name='Ads'),
     re_path(r'^.*$', RedirectView.as_view(pattern_name='Home', permanent=False)),
 ]
