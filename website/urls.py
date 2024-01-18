@@ -3,5 +3,6 @@ from django.views.generic.base import RedirectView
 from . import views
 urlpatterns = [
     path('', views.home, name='Home'),
+    path('app-ads.txt', views.ads, name='Ads'),
     re_path(r'^.*$', RedirectView.as_view(pattern_name='Home', permanent=False)),
 ]
