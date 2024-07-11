@@ -23,6 +23,16 @@ body {
   border-radius: 50%;
 }
 
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #000;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -32,14 +42,9 @@ body {
   width: 100vw;
   margin-top: 10vh;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
-
-/* debugging canvas 
-canvas, .container{
-  background-color: red;
-  color: white;
-}
-*/
 
 header {
   position: absolute;
@@ -95,3 +100,11 @@ header {
     opacity: 1;
   }
 }
+
+
+/* debugging canvas 
+#blackstackhub, .container{
+  background-color: red;
+  color: white;
+}
+*/
