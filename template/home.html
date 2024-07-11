@@ -9,26 +9,49 @@
       <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
       <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
       <meta property="og:title" content="Black Stack Hub">
-      <meta property="og:description" content="Join Black Stack Hub, where diversity meets innovation in the tech industry. Explore cybersecurity, web, and app development in an inclusive community. Connect, collaborate, and shape the future with us.">
+      <meta property="og:description" content="Black Stack Hub">
       <meta property="og:image" content="{% static 'images/blackstackhub.jpg' %}">
       <meta property="og:url" content="https://blackstackhub.com">
       <meta name="twitter:card" content="summary_large_image">
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3805485538389573"
-     crossorigin="anonymous"></script>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3805485538389573"
-     crossorigin="anonymous"></script>
    </head>
    <body>
-      <div class="logo">
-         <img src="{% static 'images/blackstackhub.jpg' %}" alt="Logo Alt Text">
-      </div>
+      <header>
+         <a class="logo" href="">
+            <img src="{% static 'images/blackstackhub.jpg' %}" alt="Logo Alt Text">
+         </a>
+         <ul class="nav-list">
+             <li><a href="#home" class="nav-link">Home</a></li>
+             <li><a href="#products" class="nav-link">Product</a></li>
+             <li><a href="#blogs" class="nav-link">Blog</a></li>
+             <li><a href="#about" class="nav-link">About</a></li>
+             <li><a href="#contact" class="nav-link">Contact</a></li>
+         </ul>
+      </header>
       <div class="container">
-         <div class="countdown" id="count"></div>
-         <div class="bottom-text">
-            <p>Stay tuned for something amazing!</p>
-            <p><a class="neon-link" href="https://chat.whatsapp.com/IVvrrF9Wq7OHWk5x4XNk9K">Join us here</a></p>
+         <div class="section active" id="home">
+            <canvas id="logoCanvas"></canvas>
+         </div>
+         
+         <div class="section" id="products">
+           <h2>Product Section</h2>
+           <p>This is the content for the about section.</p>
+         </div>
+         
+         <div class="section" id="blogs">
+           <h2>Blog Section</h2>
+           <p>This is the content for the services section.</p>
+         </div>
+         
+         <div class="section" id="about">
+           <h2>About Section</h2>
+           <p>This is the content for the contact section.</p>
+         </div>
+         
+         <div class="section" id="contact">
+           <h2>Contact Section</h2>
+           <p>This is the content for the contact section.</p>
          </div>
       </div>
-      <script src="{% static 'js/count-down.js' %}"></script>
+      <script src="{% static 'js/main.js' %}"></script>
    </body>
 </html>
