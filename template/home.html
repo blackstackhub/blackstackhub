@@ -23,7 +23,7 @@
          </a>
          <ul class="nav-list">
              <li><a href="#home" class="nav-link">Home</a></li>
-             <li><a href="#products" class="nav-link">Product</a></li>
+             <li><a href="#products" class="nav-link">Product</li>
              <li><a href="#blogs" class="nav-link">Blog</a></li>
              <li><a href="#about" class="nav-link">About</a></li>
              <li><a href="#fanbase" class="nav-link">Fanbase</a></li>
@@ -39,69 +39,15 @@
             <div class="title">
                 <h2>Products</h2>
             </div>
+            {% for product in products reversed %}
             <div class="container post">
-               <a href="">
-                  <img src="https://cdn.pixabay.com/photo/2017/01/22/22/11/cloud-computing-2001090_1280.jpg" alt="Profile Picture" class="productimg">
+               <a href="{{product.link}}">
+                  <img src="{{product.image.url}}" alt="P{{product.name}}" class="productimg">
                </a>
-               <h2>Email Hosting Server</h2>
-               <p>hosts limited email accounts and enables sending, receiving, and storing emails on a custom domain.</p>
+               <h2>{{product.name}}</h2>
+               <p>{{product.description}}</p>
             </div>
-            <div class="container post">
-               <a href="">
-                  <img src="https://cdn.pixabay.com/photo/2017/01/22/22/11/cloud-computing-2001090_1280.jpg" alt="Profile Picture" class="productimg">
-               </a>
-               <h2>Email Hosting Server</h2>
-               <p>hosts limited email accounts and enables sending, receiving, and storing emails on a custom domain.</p>
-            </div>
-            <div class="container post">
-               <a href="">
-                  <img src="https://cdn.pixabay.com/photo/2017/01/22/22/11/cloud-computing-2001090_1280.jpg" alt="Profile Picture" class="productimg">
-               </a>
-               <h2>Email Hosting Server</h2>
-               <p>hosts limited email accounts and enables sending, receiving, and storing emails on a custom domain.</p>
-            </div>
-            <div class="container post">
-               <a href="">
-                  <img src="https://cdn.pixabay.com/photo/2017/01/22/22/11/cloud-computing-2001090_1280.jpg" alt="Profile Picture" class="productimg">
-               </a>
-               <h2>Email Hosting Server</h2>
-               <p>hosts limited email accounts and enables sending, receiving, and storing emails on a custom domain.</p>
-            </div>
-            <div class="container post">
-               <a href="">
-                  <img src="https://cdn.pixabay.com/photo/2017/01/22/22/11/cloud-computing-2001090_1280.jpg" alt="Profile Picture" class="productimg">
-               </a>
-               <h2>Email Hosting Server</h2>
-               <p>hosts limited email accounts and enables sending, receiving, and storing emails on a custom domain.</p>
-            </div>
-            <div class="container post">
-               <a href="">
-                  <img src="https://cdn.pixabay.com/photo/2017/01/22/22/11/cloud-computing-2001090_1280.jpg" alt="Profile Picture" class="productimg">
-               </a>
-               <h2>Email Hosting Server</h2>
-               <p>hosts limited email accounts and enables sending, receiving, and storing emails on a custom domain.</p>
-            </div>
-            <div class="container post">
-               <a href="">
-                  <img src="https://cdn.pixabay.com/photo/2017/01/22/22/11/cloud-computing-2001090_1280.jpg" alt="Profile Picture" class="productimg">
-               </a>
-               <h2>Email Hosting Server</h2>
-               <p>hosts limited email accounts and enables sending, receiving, and storing emails on a custom domain.</p>
-            </div>
-            <div class="container post">
-               <a href="">
-                  <img src="https://cdn.pixabay.com/photo/2017/01/22/22/11/cloud-computing-2001090_1280.jpg" alt="Profile Picture" class="productimg">
-               </a>
-               <h2>Email Hosting Server</h2>
-               <p>hosts limited email accounts and enables sending, receiving, and storing emails on a custom domain.</p>
-            </div>
-            <div class="container post">
-               <a href="">
-                  <img src="https://cdn.pixabay.com/photo/2017/01/22/22/11/cloud-computing-2001090_1280.jpg" alt="Profile Picture" class="productimg">
-               </a>
-               <h2>Email Hosting Server</h2>
-               <p>hosts limited email accounts and enables sending, receiving, and storing emails on a custom domain.</p>
-            </div>
+            {% endfor %}
            </div>
          </div>
          
@@ -110,69 +56,15 @@
              <div class="title">
                  <h2>Blogs</h2>
              </div>
+             {% for blog in blogs reversed %}
              <div class="container post">
-                <a href="">
-                   <img src="https://cdn.pixabay.com/photo/2024/02/26/17/05/cloud-8598424_1280.jpg" alt="Profile Picture" class="productimg">
+                <a href="blogs/{{blog.id}}">
+                   <img src="{{blog.image.url}}" alt="{{blog.name}}" class="productimg">
                 </a>
-                <h2>GCP Compute engine</h2>
-                <p>blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
+                <h2>{{blog.title}}</h2>
+                <p>{{blog.description}}</p>
              </div>
-             <div class="container post">
-                <a href="">
-                   <img src="https://cdn.pixabay.com/photo/2024/02/26/17/05/cloud-8598424_1280.jpg" alt="Profile Picture" class="productimg">
-                </a>
-                <h2>GCP Compute engine</h2>
-                <p>blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
-             </div>
-             <div class="container post">
-                <a href="">
-                   <img src="https://cdn.pixabay.com/photo/2024/02/26/17/05/cloud-8598424_1280.jpg" alt="Profile Picture" class="productimg">
-                </a>
-                <h2>GCP Compute engine</h2>
-                <p>blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
-             </div>
-             <div class="container post">
-                <a href="">
-                   <img src="https://cdn.pixabay.com/photo/2024/02/26/17/05/cloud-8598424_1280.jpg" alt="Profile Picture" class="productimg">
-                </a>
-                <h2>GCP Compute engine</h2>
-                <p>blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
-             </div>
-             <div class="container post">
-                <a href="">
-                   <img src="https://cdn.pixabay.com/photo/2024/02/26/17/05/cloud-8598424_1280.jpg" alt="Profile Picture" class="productimg">
-                </a>
-                <h2>GCP Compute engine</h2>
-                <p>blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
-             </div>
-             <div class="container post">
-                <a href="">
-                   <img src="https://cdn.pixabay.com/photo/2024/02/26/17/05/cloud-8598424_1280.jpg" alt="Profile Picture" class="productimg">
-                </a>
-                <h2>GCP Compute engine</h2>
-                <p>blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
-             </div>
-             <div class="container post">
-                <a href="">
-                   <img src="https://cdn.pixabay.com/photo/2024/02/26/17/05/cloud-8598424_1280.jpg" alt="Profile Picture" class="productimg">
-                </a>
-                <h2>GCP Compute engine</h2>
-                <p>blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
-             </div>
-             <div class="container post">
-                <a href="">
-                   <img src="https://cdn.pixabay.com/photo/2024/02/26/17/05/cloud-8598424_1280.jpg" alt="Profile Picture" class="productimg">
-                </a>
-                <h2>GCP Compute engine</h2>
-                <p>blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
-             </div>
-             <div class="container post">
-                <a href="">
-                   <img src="https://cdn.pixabay.com/photo/2024/02/26/17/05/cloud-8598424_1280.jpg" alt="Profile Picture" class="productimg">
-                </a>
-                <h2>GCP Compute engine</h2>
-                <p>blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
-             </div>
+             {% endfor %}
             </div>
          </div>
          
@@ -190,126 +82,13 @@
                 <h2>Become One</h2>
                 <p><a href="https://github.com/blackstackhub">GitHub</a> || <a href="mailto:blackstackhub@gmail.com?subject=Hello&body=I%27m%20a...">e-Mail</a> || <a href="https://instagram.com/blackstackhub">Instagram</a> || <a href="https://chat.whatsapp.com/IVvrrF9Wq7OHWk5x4XNk9K">Whatsapp</a></p>
             </div>
+            {% for fans in fanbase reversed %}
             <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
+               <a href="{{fans.link}}">
+                  <img src="{{fans.image.url}}" alt="{{fans.name}}" class="fanimg">
                </a>
             </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
-            <div class="container ">
-               <a href="">
-                  <img src="https://th.bing.com/th/id/OIP.6fCYIeJtC4OYjACTiQoT1wHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture" class="fanimg" alt="Jane Smith">
-               </a>
-            </div>
+            {% endfor %}
            </div>
          </div>
       </div>
