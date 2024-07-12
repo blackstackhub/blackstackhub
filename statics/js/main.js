@@ -8,7 +8,7 @@ function blackstackub() {
   const textWidth = ctx.measureText(text).width;
   const textHeight = textSize * 1.8;
   canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight - (window.innerHeight / 5);
+  canvas.height = window.innerHeight;
 
   let particlesArray = [];
   const mouse = {
