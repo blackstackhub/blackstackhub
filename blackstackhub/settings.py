@@ -3,14 +3,38 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEBUG = os.getenv('DJANGO_DEBUG', 'True') == 'True'
+def load_env_vars(env_file_path):
+    with open(env_file_path, 'r') as file:
+        for line in file:
+            if line.strip() and not line.startswith('#'):
+                key, value = line.strip().split('=', 1)
+                os.environ[key] = value
 
-if DEBUG:
+load_env_vars(os.path.join(BASE_DIR, '.env'))
+
+DEBUG = os.environ.get('DEBUG', 'True') == True
+
+STATIC_URL = '/static/'
+STATIC_ROOT ='static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'statics')
+]
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+if DEBUG == True:
+    ALLOWED_HOSTS = ['*']
     SECRET_KEY = 'django-3dl*sfe=vycqj5q@-8d5q-pzs'
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 else:
-    SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
-
-ALLOWED_HOSTS = ['*']
+    DATABASES = os.getenv('DATABASES')
+    SECRET_KEY = os.getenv('SECRET')
+    ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS')
 
 
 INSTALLED_APPS = [
@@ -53,27 +77,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'blackstackhub.wsgi.application'
 
-
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'blackstackhub',
-            'USER': 'blackstackhub',
-            'PASSWORD': 'password123',
-            'HOST': 'mysql.blackstackhub.com',
-        }
-    }
-
-
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -90,8 +93,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -99,16 +100,5 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
-
-STATIC_URL = '/static/'
-STATIC_ROOT ='static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'statics')
-]
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
