@@ -32,9 +32,17 @@ if DEBUG == True:
         }
     }
 else:
-    DATABASES = os.getenv('DATABASES')
+    ALLOWED_HOSTS = ['blackstackhub.com']
     SECRET_KEY = os.getenv('SECRET')
-    ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS')
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'blackstackhub',
+            'USER': 'blackstackhub',
+            'PASSWORD': 'password123',
+            'HOST': 'mysql.blackstackhub.com',
+        }
+    }
 
 
 INSTALLED_APPS = [
