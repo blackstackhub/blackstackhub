@@ -140,7 +140,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-end;
   gap: 20px;
   width: 80vw;
   height: 80vh;

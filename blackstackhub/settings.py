@@ -1,16 +1,16 @@
 from pathlib import Path
 import os
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-3dl*sfe=vycqj5q@-8d5q-pzs'
+DEBUG = os.getenv('DJANGO_DEBUG', 'True') == 'True'
 
-DEBUG = True
+if DEBUG:
+    SECRET_KEY = 'django-3dl*sfe=vycqj5q@-8d5q-pzs'
+else:
+    SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 ALLOWED_HOSTS = ['*']
-
-
 
 
 INSTALLED_APPS = [
@@ -54,12 +54,23 @@ TEMPLATES = [
 WSGI_APPLICATION = 'blackstackhub.wsgi.application'
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'blackstackhub',
+            'USER': 'blackstackhub',
+            'PASSWORD': 'password123',
+            'HOST': 'mysql.blackstackhub.com',
+        }
+    }
 
 
 
