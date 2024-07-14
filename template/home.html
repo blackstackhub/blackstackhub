@@ -82,7 +82,7 @@
                 <h2>Become One</h2>
                 <p><a href="https://github.com/blackstackhub">GitHub</a> || <a href="mailto:blackstackhub@gmail.com?subject=Hello&body=I%27m%20a...">e-Mail</a> || <a href="https://instagram.com/blackstackhub">Instagram</a> || <a href="https://chat.whatsapp.com/IVvrrF9Wq7OHWk5x4XNk9K">Whatsapp</a></p>
             </div>
-            {% for fans in fanbase reversed %}
+            {% for fans in fanbase %}
             <div class="container ">
                <a href="{{fans.link}}">
                   <img src="{{fans.image.url}}" alt="{{fans.name}}" class="fanimg">
