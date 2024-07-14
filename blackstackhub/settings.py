@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+from google.oauth2 import service_account
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -12,15 +13,8 @@ def load_env_vars(env_file_path):
 
 load_env_vars(os.path.join(BASE_DIR, '.env'))
 
-DEBUG = os.environ.get('DEBUG', 'True') == True
+DEBUG = os.environ.get('DEBUG', True) == 'True'
 
-STATIC_URL = '/static/'
-STATIC_ROOT ='static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'statics')
-]
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if DEBUG == True:
     ALLOWED_HOSTS = ['*']
@@ -53,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -108,5 +103,21 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+GS_BUCKET_NAME = 'blackstackhub'
+GS_PROJECT_ID = 'blackstackhub'
+GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
+    os.path.join(BASE_DIR, 'blackstackhub.json')
+)
+
+STATIC_URL = '/static/'
+STATIC_ROOT ='static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'statics')
+]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
