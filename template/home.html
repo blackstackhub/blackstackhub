@@ -34,23 +34,6 @@
             <canvas id="blackstackhub"></canvas>
          </div>
          
-         <div class="section" id="products">
-           <div class="scrollable-container">
-            <div class="title">
-                <h2>Products || Services</h2>
-            </div>
-            {% for product in products reversed %}
-            <div class="container post">
-               <a href="{{product.link}}">
-                  <img src="{{product.image.url}}" alt="P{{product.name}}" class="productimg">
-               </a>
-               <h2>{{product.name}}</h2>
-               <p>{{product.description}}</p>
-            </div>
-            {% endfor %}
-           </div>
-         </div>
-         
          <div class="section" id="blogs">
             <div class="scrollable-container">
              <div class="title">

@@ -1,11 +1,10 @@
 from django.shortcuts import render
-from .models import Product, Blog, Comment, Fanbase
+from .models import Blog, Comment, Fanbase
 
 def home(request):
-    products = Product.objects.all
     fanbase = Fanbase.objects.all
     blogs = Blog.objects.all
-    return render(request, 'home.html', {'products':products, 'fanbase':fanbase, 'blogs':blogs})
+    return render(request, 'home.html', {'fanbase':fanbase, 'blogs':blogs})
 
 def ads(request):
     return render(request, 'app-ads.txt')

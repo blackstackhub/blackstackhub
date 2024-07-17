@@ -9,15 +9,6 @@ class Fanbase(models.Model):
 
     def __str__(self):
         return self.name
-
-class Product(models.Model):
-    name = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='product_images/')
-    description = models.CharField(max_length=255)
-    link = models.CharField(max_length=255)
-
-    def __str__(self):
-        return self.name
     
 class BlogContent(models.Model):
     text = models.TextField(null=True, blank=True)

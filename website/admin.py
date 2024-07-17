@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Fanbase, Product, BlogContent, Blog, Comment
+from .models import Fanbase, BlogContent, Blog, Comment
 
 class BlogContentInline(admin.TabularInline):
     model = Blog.contents.through
@@ -19,7 +19,6 @@ class BlogAdmin(admin.ModelAdmin):
         super().save_model(request, obj, form, change)
 
 admin.site.register(Fanbase)
-admin.site.register(Product)
 admin.site.register(BlogContent)
 admin.site.register(Blog, BlogAdmin)
 admin.site.register(Comment)
