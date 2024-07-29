@@ -34,7 +34,7 @@ else:
             'NAME': 'blackstackhub',
             'USER': 'blackstackhub',
             'PASSWORD': 'password123',
-            'HOST': 'mysql.blackstackhub.com',
+            'HOST': 'localhost',
         }
     }
 
