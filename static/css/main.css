@@ -1,0 +1,208 @@
+@media screen and (min-width: 480px) {
+  ::-webkit-scrollbar {
+      width: 10px;
+      height: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+      background: black;
+      border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'Helvetica', sans-serif;
+  background-color: black;
+  color: white;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  background-color: black;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  width: 100%;
+  padding: 2em 0;
+  z-index: 2;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  right: 0px;
+}
+
+.nav-list li {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+}
+
+.nav-list li:first-child a {
+  color: black;
+  visibility: hidden;
+}
+
+.logo {
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  padding-top: 1em;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
+
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #000;
+}
+
+.main.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 90vh;
+  width: 100vw;
+  margin-top: 10vh;
+  position: relative;
+  z-index: 1;
+}
+
+
+.section {
+  display: none;
+  margin-top: -10vh;
+}
+
+.section .text-sized{
+  padding: 10px;
+  max-width: 600px;
+}
+
+.section.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: slide-up 0.5s ease forwards;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.section .scrollable-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+  width: 80vw;
+  height: 80vh;
+  overflow: auto;
+  padding-top: 30vh;
+  padding-bottom: 30vh;
+}
+
+.section .title {
+  width: 100%;
+}
+
+.section .container {
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.section .fanimg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.section .productimg {
+  border: 1px solid whitesmoke;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.section h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.section .container.post {
+  max-width: 250px;
+}
+
+.section p {
+  color: #777;
+  
+}
+
+.section a {
+  color: #777;
+  text-decoration: none;
+}
+
+.section a:hover {
+  color: #999;
+}
+
+
+/* debugging canvas 
+#blackstackhub, .container{
+  background-color: red;
+  color: white;
+}
+*/

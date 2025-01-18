@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Black Stack Hub</title>
+      <link rel="stylesheet" href="static/css/main.css">
+      <link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
+      <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+      <meta property="og:title" content="Black Stack Hub">
+      <meta property="og:description" content="Black Stack Hub">
+      <meta property="og:image" content="static/images/blackstackhub.jpg">
+      <meta property="og:url" content="https://blackstackhub.com">
+      <meta name="twitter:card" content="summary_large_image">
+   </head>
+   <body>
+      <canvas id="background"></canvas>
+      <header>
+         <a class="logo" href="">
+            <img src="static/images/blackstackhub.jpg" alt="Logo Alt Text">
+         </a>
+         <ul class="nav-list">
+             <li><a href="#home" class="nav-link">Home</a></li>
+             <li><a href="#blogs" class="nav-link">Blog</a></li>
+             <li><a href="#about" class="nav-link">About</a></li>
+             <li><a href="#fanbase" class="nav-link">Fanbase</a></li>
+         </ul>
+      </header>
+      <div class="main container">
+         <div class="section active" id="home">
+            <canvas id="blackstackhub"></canvas>
+         </div>
+         
+         <div class="section" id="blogs">
+            <div class="scrollable-container">
+             <div class="title">
+                 <h2>Blog Posts</h2>
+             </div>
+             {% for blog in blogs reversed %}
+             <div class="container post">
+                <a href="blogs/{{blog.id}}">
+                   <img src="{{blog.image.url}}" alt="{{blog.name}}" class="productimg">
+                </a>
+                <h2>{{blog.title}}</h2>
+                <p>{{blog.description}}</p>
+             </div>
+             {% endfor %}
+            </div>
+         </div>
+         
+         <div class="section" id="about">
+           <h2>About</h2>
+           <div class="text-sized">
+            <!--
+            <p>There was an idea: to bring together a group of remarkable people and see if they could become something more. To see if they could collaborate when the world needed them most, tackling challenges that seemed insurmountable. To fight for perfect balance with their code, creativity, and hacktivism. The goal isn't to win; the goal is to make a little change.</p>
+            -->
+            <p>cooking...</p>
+           </div>
+         </div>
+         
+         <div class="section" id="fanbase">
+           <div class="scrollable-container">
+            <div class="title">
+                <h2>Become One</h2>
+                <p><a href="https://github.com/blackstackhub">GitHub</a> || <a href="mailto:blackstackhub@gmail.com?subject=Hello&body=I%27m%20a...">e-Mail</a> || <a href="https://instagram.com/blackstackhub">Instagram</a> || <a href="https://chat.whatsapp.com/IVvrrF9Wq7OHWk5x4XNk9K">Whatsapp</a></p>
+            </div>
+            {% for fans in fanbase %}
+            <div class="container ">
+               <a href="{{fans.link}}">
+                  <img src="{{fans.image.url}}" alt="{{fans.name}}" class="fanimg">
+               </a>
+            </div>
+            {% endfor %}
+           </div>
+         </div>
+      </div>
+      <script src="static/js/main.js"></script>
+   </body>
+</html>
