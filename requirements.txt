@@ -1,3 +1,0 @@
-django
-django-storages
-google-cloud-storage
