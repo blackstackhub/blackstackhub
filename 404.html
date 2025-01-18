@@ -37,25 +37,16 @@
              <div class="title">
                  <h2>Blog Posts</h2>
              </div>
-             {% for blog in blogs reversed %}
-             <div class="container post">
-                <a href="blogs/{{blog.id}}">
-                   <img src="{{blog.image.url}}" alt="{{blog.name}}" class="productimg">
-                </a>
-                <h2>{{blog.title}}</h2>
-                <p>{{blog.description}}</p>
-             </div>
-             {% endfor %}
             </div>
          </div>
          
          <div class="section" id="about">
            <h2>About</h2>
            <div class="text-sized">
-            <!--
             <p>There was an idea: to bring together a group of remarkable people and see if they could become something more. To see if they could collaborate when the world needed them most, tackling challenges that seemed insurmountable. To fight for perfect balance with their code, creativity, and hacktivism. The goal isn't to win; the goal is to make a little change.</p>
-            -->
+            <!--
             <p>cooking...</p>
+            -->
            </div>
          </div>
          
@@ -65,13 +56,6 @@
                 <h2>Become One</h2>
                 <p><a href="https://github.com/blackstackhub">GitHub</a> || <a href="mailto:blackstackhub@gmail.com?subject=Hello&body=I%27m%20a...">e-Mail</a> || <a href="https://instagram.com/blackstackhub">Instagram</a> || <a href="https://chat.whatsapp.com/IVvrrF9Wq7OHWk5x4XNk9K">Whatsapp</a></p>
             </div>
-            {% for fans in fanbase %}
-            <div class="container ">
-               <a href="{{fans.link}}">
-                  <img src="{{fans.image.url}}" alt="{{fans.name}}" class="fanimg">
-               </a>
-            </div>
-            {% endfor %}
            </div>
          </div>
       </div>
